@@ -25,6 +25,8 @@ class MCloneController extends BaseController
 
     public function mclone()
     {
+        return jsonData(-999, 'mclone已不再支持Proxy方式拉取，请使用git mclone --mirror代替');
+
         $repo = $this->post('repo');
         $repo = base64_decode($repo);
         if (!$this->checkRepo($repo)) {
